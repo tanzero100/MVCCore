@@ -2,13 +2,46 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
+    <script>
+//        window.onscroll = function() {myFunction()};
+
+//var header = document.getElementById("masthead");
+//var sticky = header.offsetTop;
+
+//        function myFunction() {
+//            debugger;
+//  if (window.pageYOffset > sticky) {
+//    header.classList.add("sticky");
+//  } else {
+//    header.classList.remove("sticky");
+//  }
+//}
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
     <title>@ViewBag.Title</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link href="~/lib/bootstrap/dist/css/bootstrap-grid.css" rel="stylesheet" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
+              crossorigin="anonymous"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
+    </environment>
+
+    <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-    <div>
-        asdfa
+    <header style="padding:0px">
+        <partial name="~/Views/Shared/navbar.cshtml" />
+    </header>
+    <div class="">
         @RenderBody()
     </div>
+    <footer></footer>
 </body>
 </html>
